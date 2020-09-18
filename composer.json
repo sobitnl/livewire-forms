@@ -1,0 +1,25 @@
+{
+    "name": "sobitnl/livewire-forms",
+    "description": "A dynamic, responsive Livewire form component with realtime validation, file uploads, array fields, and more.",
+    "homepage": "https://github.com/sobitnl/livewire-forms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik Dohmen",
+            "email": "erik@sobit.nl",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SobitNL\\LivewireForms\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SobitNL\\LivewireForms\\Providers\\FormServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use App\DummyModel;
+use SobitNL\LivewireForms\ArrayField;
+use SobitNL\LivewireForms\Field;
+use SobitNL\LivewireForms\FormComponent;
+
+class DummyComponent extends FormComponent
+{
+
+    public $buttons = ['cancel','saveAndStay','saveAndGoBack'];
+
+    public function fields()
+    {
+        return [
+            Field::make('Name')->input()->rules('required'),
+        ];
+    }
+
+    public function success()
+    {
+        DummyModel::create($this->form_data);
+    }
+
+    public function cancel()
+    {
+        return redirect()->route('home');
+    }
+
+    public function saveAndStayResponse()
+    {
+        return redirect()->route('DummyRoute.create');
+    }
+
+    public function saveAndGoBackResponse()
+    {
+        return redirect()->route('DummyRoute.index');
+    }
+}
