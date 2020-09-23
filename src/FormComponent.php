@@ -78,6 +78,11 @@ class FormComponent extends Component
         $this->success();
     }
 
+    public function errorMessage($message)
+    {
+        return str_replace('form data.', '', $message);
+    }
+
     public function success()
     {
         $this->form_data['password'] = bcrypt($this->form_data['password']);
