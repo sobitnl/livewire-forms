@@ -17,6 +17,7 @@ class BaseField
     protected $help;
     protected $rules;
     protected $view;
+    protected $input_class;
 
     public function __get($property)
     {
@@ -72,6 +73,12 @@ class BaseField
     public function default($default)
     {
         $this->default = $default;
+        return $this;
+    }
+
+    public function inputClass($input_class)
+    {
+        $this->input_class = $input_class;
         return $this;
     }
 

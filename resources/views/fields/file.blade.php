@@ -8,7 +8,7 @@
             <input
                 id="{{ $field->name }}"
                 type="file"
-                class="custom-file-input @error($field->key) is-invalid @enderror"
+                class="custom-file-input {{ $field->input_class }} @error($field->key) is-invalid @enderror"
                 {{ $field->file_multiple ? 'multiple' : '' }}>
 
             <label class="custom-file-label" for="{{ $field->name }}">

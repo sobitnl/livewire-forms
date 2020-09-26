@@ -9,7 +9,7 @@
                 <input
                     id="{{ $field->name . '.' . $loop->index }}"
                     type="radio"
-                    class="form-check-input @error($field->key) is-invalid @enderror"
+                    class="form-check-input {{ $field->input_class }} @error($field->key) is-invalid @enderror"
                     value="{{ $value }}"
                     wire:model.lazy="{{ $field->key }}">
 

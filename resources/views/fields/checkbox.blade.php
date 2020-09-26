@@ -8,7 +8,7 @@
             <input
                 id="{{ $field->name }}"
                 type="checkbox"
-                class="form-check-input @error($field->key) is-invalid @enderror"
+                class="form-check-input {{ $field->input_class }} @error($field->key) is-invalid @enderror"
                 wire:model.lazy="{{ $field->key }}">
 
             <label class="form-check-label" for="{{ $field->name }}">
