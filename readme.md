@@ -429,7 +429,15 @@ The default value.
 Example:
 
     Field::make('City')->input()->default('Toronto'),
-    
+
+##### `$inputClass`
+
+An class you want to be added to the input field.
+
+Example:
+
+    Field::make('price')->input()->inputClass('text-right'),
+
 ### `autocomplete($autocomplete)`
 
 Sets the autocomplete value to use for the field.
