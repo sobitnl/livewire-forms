@@ -1,4 +1,4 @@
-<div class="form-group row">
+<div class="form-group">
     <label for="{{ $field->name }}" class="col-md-2 col-form-label text-md-right">
         {{ $field->label }}
     </label>
