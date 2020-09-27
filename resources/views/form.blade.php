@@ -9,7 +9,7 @@
                 @endif
             @endforeach
 
-            <div class="row">
+            <div class="form-group">
                 <div class="col-md offset-md-2">
                     @if(in_array('saveAndStay',$this->buttons))
                     <button class="btn btn-primary saveAndStay" wire:click="saveAndStay">{{ __('Save') }}</button>
