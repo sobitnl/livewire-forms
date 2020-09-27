@@ -293,9 +293,9 @@ Example:
 
     Field::make('Email Address')->input('email'),
     
-### `open($content = '')`
+### `content($content = '')`
 
-Create an open entry in which you can paste anything.
+Create an content entry in which you can paste anything.
 
 ##### `$content`
 
@@ -303,8 +303,8 @@ Anything you like
 
 Example:
 
-    Field::make('startDiv')->open('<div class="startContainer">'),
-    Field::make('endDiv')->open('</div>'),
+    Field::make('startDiv')->content('<div class="startContainer">'),
+    Field::make('endDiv')->content('</div>'),
     
 ### `file()`
 

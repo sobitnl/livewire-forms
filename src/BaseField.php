@@ -26,9 +26,9 @@ class BaseField
         return $this->$property;
     }
 
-    public function open($content = '')
+    public function content($content = '')
     {
-        $this->type = 'open';
+        $this->type = 'content';
         $this->content = $content;
     }
 
