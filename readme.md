@@ -293,6 +293,19 @@ Example:
 
     Field::make('Email Address')->input('email'),
     
+### `open($content = '')`
+
+Create an open entry in which you can paste anything.
+
+##### `$content`
+
+Anything you like
+
+Example:
+
+    Field::make('startDiv')->open('<div class="startContainer">'),
+    Field::make('endDiv')->open('</div>'),
+    
 ### `file()`
 
 Sets the field to be a `file` input element.

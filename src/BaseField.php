@@ -18,10 +18,18 @@ class BaseField
     protected $rules;
     protected $view;
     protected $input_class;
+    protected $content;
+
 
     public function __get($property)
     {
         return $this->$property;
+    }
+
+    public function open($content = '')
+    {
+        $this->type = 'open';
+        $this->content = $content;
     }
 
     public function input($type = 'text')
