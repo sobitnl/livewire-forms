@@ -30,6 +30,7 @@ class BaseField
     {
         $this->type = 'content';
         $this->content = $content;
+        return $this;
     }
 
     public function input($type = 'text')
