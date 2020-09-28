@@ -51,15 +51,30 @@ Using the `make` command:
 
 This creates your new form component in the `app/Http/Livewire` folder.
 
-After making a component, you may want to edit the `fields`, `success`, `saveAndStayResponse` and `saveAndGoBackResponse` methods:
+After making a component, you may want to edit the `fields`, `success`, `cancel`, `saveAndStayResponse` and `saveAndGoBackResponse` methods:
 
     class UserCreateForm extends FormComponent
     {
         public function fields()
         {
+        
+            $this->addExtraButtons('btn btn-primary','logHello','hello');
+            $this->addExtraButtons('btn btn-secondary','slogGoodbye','goodbye');
+            
             return [
                 Field::make('Name')->input()->rules('required'),
             ];
+        }
+        
+        // extra button methods
+        public function logHello()
+        {
+            logger('say hello');
+        }
+    
+        public function logGoodbye()
+        {
+            logger('say goodbye');
         }
     
         public function success()
@@ -76,11 +91,27 @@ After making a component, you may want to edit the `fields`, `success`, `saveAnd
         {
             return redirect()->route('users.index');
         }
+        
+        public function cancel()
+        {
+            return redirect()->route('users.index');
+        }
     }
     
 You don't have to use the `render()` method in your form component or worry about a component view, because the package handles that automatically.
 
-**Protip: you can add the `FillsColumns` trait to your model for automatic `$fillable`s via database column names.**
+**Protips:**
+
+you can add the `FillsColumns` trait to your model for automatic `$fillable`s via database column names.
+
+if you want to add extra buttons, you can do so within the fields method. Add a method call:
+```
+$this->addExtraButton('btn btnPrimary','logHello','hello');
+```
+variables:
+- classNames: the different classnames you want to attach to the button
+- methodName: called if you click the button. **Important:** create the corresponding method within your file
+- translationVar: the translation variable to set for the button 
 
 # Using Form Components
 

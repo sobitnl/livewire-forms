@@ -20,6 +20,11 @@
                     @if(in_array('cancel',$this->buttons))
                     <button class="btn btn-primary cancel" wire:click="cancel">{{ __('Cancel') }}</button>
                     @endif
+                    @if(count($this->extraButtons) > 0)
+                        @foreach($this->extraButtons as $button)
+                                <button class="{!! $button->classes ?? '' !!}" wire:click="{{ $button->click }}">{!! $button->text !!}</button>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

@@ -20,6 +20,11 @@ class FormComponent extends Component
     protected $listeners = ['fileUpdate'];
 
     public $buttons = ['cancel','saveAndStay','saveAndGoBack'];
+    // an extra button needs the structure of (object) ['classes' => '', 'click' => 'action', 'text' => __('btnText')]
+    // make sure the click method name is added to the handler
+    // like in this case
+    // public method action(){}
+    public $extraButtons = [];
 
     public function mount($model = null)
     {
@@ -37,6 +42,16 @@ class FormComponent extends Component
                 $this->form_data[$field->name] = $field->default ?? ($array ? [] : null);
             }
         }
+    }
+
+    public function addExtraButton($classes = '', $click = '', $translationVar = '')
+    {
+        $this->extraButtons[] = (object) [
+          'classes' => $classes,
+          'click' => $click,
+          'text' => __($translationVar),
+        ];
+        return $this;
     }
 
     public function render()

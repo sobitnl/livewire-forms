@@ -14,9 +14,24 @@ class DummyComponent extends FormComponent
 
     public function fields()
     {
+
+        $this->addExtraButtons('btn btn-primary','logHello','hello');
+        $this->addExtraButtons('btn btn-secondary','slogGoodbye','goodbye');
+
         return [
             Field::make('Name')->input()->rules('required'),
         ];
+    }
+
+    // extra button methods
+    public function logHello()
+    {
+        logger('say hello');
+    }
+
+    public function logGoodbye()
+    {
+        logger('say goodbye');
     }
 
     public function success()
